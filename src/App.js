@@ -1,13 +1,31 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import TaskRoute from "./routes/TaskRoute/TaskRoute";
 
 function App() {
   return (
-    <div className="App">
-      <TaskRoute />
-    </div>
+    <Router>
+      <div className="App">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Sign Up</Link>
+            </li>
+            <li>
+              <Link to="/tasks">Tasks</Link>
+            </li>
+            <li>
+              <Link to="/users">Users</Link>
+            </li>
+          </ul>
+        </nav>
+        <Routes>
+          <Route path="/" element={<TaskRoute />} />
+          <Route path="tasks/*" element={<TaskRoute />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
