@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import TaskRoute from "./routes/TaskRoute/TaskRoute";
-
+import SignupForm from "./routes/SignupForm/SignupForm";
 function App() {
   return (
     <Router>
@@ -21,7 +21,7 @@ function App() {
           </ul>
         </nav>
         <Routes>
-          <Route path="/" element={<TaskRoute />} />
+          <Route path="/" element={<SignupForm />} />
           <Route path="tasks/*" element={<TaskRoute />} />
         </Routes>
       </div>
